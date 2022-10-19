@@ -269,28 +269,5 @@ window.addEventListener('load', ()=>{
                 alert('Error, el año debe estar en el rango de 1900 y 2022');
             }
         }
-        
-        /*if(dui.length){
-            //seleccionando el documento a modificar y el tipo de operacion
-            let transaccion = baseDatos.transaction(['automoviles'], 'readwrite');
-            //accediendo al documento notas
-            let automoviles = transaccion.objectStore('automoviles');
-            //Creando objeto automovil
-            let automovil = {nombre: nombre, dui: dui, nit: nit, año: anio, marca: marca, modelo: modelo,  color: color, placa: placa, fallas: falla};
-            //agregando vehiculo a la tabla
-            automoviles.add(automovil);
-
-            //verificando el proceso
-            transaccion.oncomplete = function(){
-                document.querySelector('#resultado').innerText = 'El vehiculo se agrego de fomra exitosa!!';
-            }
-
-            transaccion.onerror = function(evento){
-                document.querySelector('#resultado').innerText = `Error al almacenar el vehiculo: ${evento.target.errorCode}`;
-            }
-        
-        }else{
-            document.querySelector('#resultado').innerText = 'ERROR.CAMPO VACIO';
-        }*/
     });
 });
