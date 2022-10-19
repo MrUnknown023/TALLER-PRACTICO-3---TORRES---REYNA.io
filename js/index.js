@@ -1,13 +1,27 @@
+
 //Evento change al cambiar de opción en el elemento select
 function iniciar(){
     var select = document.getElementById("fabricante");
-    
+    var button = document.getElementById("btnAgregar");
+
     //Al producirse en evento change en el elemento select
     //invocar a la función addOptions para volver a llenar
     //el select dependiente con los datos adecuados
     if(select.addEventListener){
         select.addEventListener("change", function(){
             addOptions(marcas[this.options[this.selectedIndex].text],document.frmcar.modelo);
+            carro.mostrar();
+        }, false);
+    }
+
+    //Al producirse un click sobre el botón de envío
+    //invocar los métodos del objeto carro que mostrarán
+    //los valores ingresados en el formulario
+    if(button.addEventListener){
+        button.addEventListener("click", function(){
+        var seleccion = showRadioSelected(document.frmcar.radcolor);
+        carro.pedido(document.frmcar.nombre.value,document.frmcar.dui.value,document.frmcar.nit.value,document.frmcar.fabricante.value, document.frmcar.modelo.value,seleccion, document.frmcar.txtanio.value);
+        carro.mostrar();
         }, false);
     }
 }
@@ -23,11 +37,23 @@ marcas["Mitsubishi"] = ["Lancer", "Galant", "Eclipse", "Montero", "Nativa"];
 //Creando el objeto carro con el constructor Object()
 var carro = new Object();
 //Propiedades del objeto
+carro.duenio = "";
+carro.dui = "";
+carro.nit = "";
 carro.fabricante = "";
 carro.modelo = "";
 carro.color = "";
 carro.anio = "";
-
+//Métodos del objeto
+carro.pedido = function(nom, dui, nit, fab, mod, col, an){
+    carro.duenio = nom;
+    carro.dui = dui;
+    carro.nit = nit;
+    carro.fabricante = fab;
+    carro.modelo = mod;
+    carro.color = col;
+    carro.anio = an;
+}
 carro.mostrar = function(){
     var tabla = "";
     var info = document.getElementById('infocarro');
@@ -36,6 +62,12 @@ carro.mostrar = function(){
     tabla += "\t\t<th colspan=\"2\">Datos del carro</th>\n";
     tabla += "\t</tr>\n</thead>\n";
     tabla += "<tbody>\n\t";
+    tabla += "\t<tr>\n\t\t<td>Dueño: </td>\n";
+    tabla += "\t\t<td>" + carro.duenio + "</td>\n\t</tr>\n";
+    tabla += "\t<tr>\n\t\t<td>DUI: </td>\n";
+    tabla += "\t\t<td>" + carro.dui + "</td>\n\t</tr>\n";
+    tabla += "\t<tr>\n\t\t<td>NIT: </td>\n";
+    tabla += "\t\t<td>" + carro.nit + "</td>\n\t</tr>\n";
     tabla += "\t<tr>\n\t\t<td>Fabricante: </td>\n";
     tabla += "\t\t<td>" + carro.fabricante + "</td>\n\t</tr>\n";
     tabla += "\t<tr>\n\t\t<td>Modelo: </td>\n";
@@ -212,7 +244,6 @@ window.addEventListener('load', ()=>{
             transaccion.onerror = function(evento){
                 document.querySelector('#resultado').innerText = `Error al almacenar el vehiculo: ${evento.target.errorCode}`;
             }
-            location.reload();
         }else{
             if(!Verific.getVeriDui()){
                 alert('error, El Dui no tiene el formato correcto ########-#');
