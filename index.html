@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form id="frmcar" name="frmcar">
+        <div class="contenedor">
+            <div class="nombre">
+                <label for="nombre">NOMBRE:</label>
+                <input type="text" id="nombre">
+            </div>
+            
+            <div class="dui">
+                <label for="dui">DUI:</label>
+                <input type="text" id="dui">
+            </div>
+            
+            <div class="nit">
+                <label for="dui">NIT:</label>
+                <input type="text" id="nit">
+            </div>
+            
+            <div class="anio">
+                <label for="txtanio">Año: </label>
+                <input type="number" name="txtanio" placeholder="2010" maxlength="4" id="anio"/>
+            </div>
+        </div>
+        
+        <fieldset id="fldcar" class="group">
+            <legend><span class="labelgroup">Datos del automovil:</span></legend>
+            <div class="marca">
+                <label for="fabricante">Marca: </label>
+                <select name="fabricante" id="fabricante">
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                </select>
+            </div>
+            
+            <div class="modelo">
+                <label for="selmod">Modelo: </label>
+                <select name="modelo" id="modelo">
+                <option value="Corolla">Corolla</option>
+                <option value="Echo">Echo</option>
+                <option value="Yaris">Yaris</option>
+                <option value="Avensis">Avensis</option>
+                <option value="Camry">Camry</option>
+                <option value="Land Cruiser">Land Cruiser</option>
+                <option value="4 Runner">4 Runner</option>
+                <option value="Hilux">Hilux</option>
+            </select>
+            </div>
+            
+            <div class="colores">
+                <label for="radcolor" class="colores">Color:</label><br />
+                <input type="radio" value="Blanco" alt="Marque el color del carro" id="radcolor" name="radcolor" value="blanco" checked/>
+                <label for="radcolor" class="colores">Blanco</label><br>
+                <input type="radio" value="Negro" alt="Marque el color del carro" id="radcolor" name="radcolor" value="negro"/>
+                <label for="radcolor" class="colores">Negro</label><br>
+                <input type="radio" value="Gris" alt="Marque el color del carro" id="radcolor" name="radcolor" value="gris"/>
+                <label for="radcolor" class="colores">Gris</label><br>
+                <input type="radio" value="Azul" alt="Marque el color del carro" id="radcolor" name="radcolor" value="azul"/>
+                <label for="radcolor" class="colores">Azul</label><br>
+                <input type="radio" value="Verde" alt="Marque el color del carro" id="radcolor" name="radcolor" value="verde"/>
+                <label for="radcolor" class="colores">Verde</label><br>
+                <input type="radio" value="Rojo" alt="Marque el color del carro" id="radcolor" name="radcolor" value="rojo"/>
+                <label for="radcolor" class="colores">Rojo</label><br>
+                <input type="radio" value="Amarillo" alt="Marque el color del carro" id="radcolor" name="radcolor" value="amarillo"/>
+                <label for="radcolor" class="colores">Amarillo</label><br>
+                <input type="radio" value="Beige" alt="Marque el color del carro" id="radcolor" name="radcolor" value="beige"/>
+                <label for="radcolor" class="colores">Beige</label> <br/>
+            </div>
+        </fieldset>
+        <div class="placa">
+            <label for="placa">PLACA:</label>
+            <input type="text" id="placa">
+        </div>
+        <div class="fallas">
+            <label for="fallas">FALLAS:</label>
+            <textarea name="fallas" id="fallas" cols="30" rows="5"></textarea>
+        </div>
+        
+        <input type="button" name="btnEnviar" id="btnAgregar" value="Enviar" />
+        <div id="resultado"></div>
+        
+    </form>
+</body>
+<script src="js/index.js"></script>
+</html>

@@ -1,0 +1,57 @@
+*{
+    font-family: Arial;
+}
+
+.contenedor{
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre, .dui, .nit, .anio{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.group{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.marca{
+    display: flex;
+    flex-direction: column;
+}
+
+.marca select, .modelo select{
+    margin-top: 5px;
+    height: 30px;
+}
+
+.modelo{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#btnAgregar{
+    margin-top: 10px;
+    background-color: green;
+    border: 0;
+    color: white;
+    height:30px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#btnAgregar:hover{
+    background-color: rgb(20, 168, 12);
+}
+
+
+
+
